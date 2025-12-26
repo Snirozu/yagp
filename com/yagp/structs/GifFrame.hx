@@ -124,7 +124,8 @@ class GifFrame
   private function interlacedFor(pixels:Vector<UInt>, step:Int, startY:Int, offset:Int):Int
   {
     var y:Int = startY;
-    while (startY < this.height)
+    // TODO: interlaced gifs have "blinking" parts in the rendered animation
+		if (startY < this.height)
     {
       for (x in 0...this.width)
       {
